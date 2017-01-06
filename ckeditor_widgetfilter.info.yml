@@ -1,0 +1,7 @@
+name: CKEditor Widget Filter
+type: module
+description: 'A CKEditor plugin for extensible widget insertion lacation filtering.'
+package: Componentize
+core: '8.x'
+dependencies:
+  - ckeditor
