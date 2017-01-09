@@ -50,10 +50,6 @@
         }
         return result;
       };
-
-      this._editor.widgets.finder.getDragData = function() {
-        return proxy.getDragData();
-      };
     },
 
     /**
@@ -122,6 +118,8 @@
       }
 
       _.extend(this._relations, this._greedySearch.call(this._editor.widgets.finder));
+
+      return this._dragData;
     },
 
     /**
@@ -133,13 +131,6 @@
       this._dragData = null;
       this._activeFilters = [];
       this._relations = {};
-    },
-
-    /**
-     * Gets the currently active, decorated drag data model.
-     */
-    getDragData: function() {
-      return this._dragData;
     },
 
     /**

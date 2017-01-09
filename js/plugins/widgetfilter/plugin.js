@@ -45,14 +45,35 @@
    */
   Drupal.ckeditor_widgetfilter.Filters.Default = Drupal.ckeditor_widgetfilter.Filter.extend({
 
-    requires: ['widget'],
-
     /**
      * {@method}
      */
     constructor: function(editor) {
-      this.filter = editor.widgets.finder.lookups.default;
+      this._defaultFilter = editor.widgets.finder.lookups.default;
     },
+
+    filter: function(el, dragData) {
+      if (dragData.get('widget')) {
+        return this._defaultFilter(el);
+      }
+      else  {
+
+        if (el.is(CKEDITOR.dtd.$listItem)) {
+          return;
+        }
+
+        if (!el.is(CKEDITOR.dtd.$block)) {
+          return;
+        }
+
+        // Allow drop line inside, but never before or after nested editable (#12006).
+        if (CKEDITOR.plugins.widget.isDomNestedEditable(el)) {
+          return;
+        }
+
+        return CKEDITOR.LINEUTILS_BEFORE | CKEDITOR.LINEUTILS_AFTER;
+      }
+    }
   });
 
   CKEDITOR.plugins.add('widgetfilter', {
