@@ -1,0 +1,14 @@
+{
+  "name": "christophersmith262/ckeditor_widgetfilter",
+  "description": "A CKEditor plugin for extensible widget insertion lacation filtering.",
+  "homepage": "https://github.com/christophersmith262/paragraphs_ckeditor",
+  "authors": [
+    {
+      "name": "Christopher Smith",
+      "homepage": "https://github.com/christophersmith262"
+    }
+  ],
+  "support": {
+  },
+  "license": "GPL-2.0+"
+}
