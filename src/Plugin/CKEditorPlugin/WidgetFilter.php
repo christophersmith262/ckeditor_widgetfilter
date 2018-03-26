@@ -29,7 +29,7 @@ class WidgetFilter extends CKEditorPluginBase implements CKEditorPluginContextua
    * {@inheritdoc}
    */
   public function getFile() {
-    return drupal_get_path('module', 'ckeditor_widgetfilter') . '/js/plugins/widgetfilter/plugin.js';
+    return drupal_get_path('module', 'ckeditor_widgetfilter') . '/js/dist/plugins/widgetfilter/plugin.js';
   }
 
   /**

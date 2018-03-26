@@ -1,9 +1,6 @@
 widgetfilter:
   version: 1.x
   js:
-    js/widgetfilter.js: {}
-    js/include/Decorator.js: {}
-    js/include/Filter.js: {}
-    js/include/FinderFilterProxy.js: {}
+    js/dist/widgetfilter.js: {}
   dependencies:
     - core/backbone
